@@ -5,6 +5,7 @@ const server = express();
 require('dotenv').config();
 server.use(cors());
 server.use(express.json());
+const PORT=3001
 //Connecting to mongo data base
 mongoose.connect(process.env.MONGO, { useNewUrlParser: true, useUnifiedTopology: true }); 
 
@@ -147,32 +148,5 @@ async function updateAppsHandler(req,res){
 
 // majed.save()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-server.listen(3001,()=>{})
-server.get('/', (req, res) => { res.send(`Listining to 3001`) })
+server.listen(PORT,()=>{})
+server.get('/', (req, res) => { res.send(`Listining to ${PORT}`) })
