@@ -5,9 +5,8 @@ const server = express();
 require('dotenv').config();
 server.use(cors());
 server.use(express.json());
-const mongolink = process.env.Mongo_Link;
 //Connecting to mongo data base
-mongoose.connect('mongodb://majed:12345@majeddatabases-shard-00-00.lxke3.mongodb.net:27017,majeddatabases-shard-00-01.lxke3.mongodb.net:27017,majeddatabases-shard-00-02.lxke3.mongodb.net:27017/bs_database?ssl=true&replicaSet=atlas-ajtsf6-shard-0&authSource=admin&retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }); 
+mongoose.connect(process.env.MONGO, { useNewUrlParser: true, useUnifiedTopology: true }); 
 
 
 //_____________________________________________________________________________________________SERVERS
