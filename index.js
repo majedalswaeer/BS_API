@@ -5,6 +5,7 @@ const server = express();
 require('dotenv').config();
 server.use(cors());
 server.use(express.json());
+const PORT=3001
 //Connecting to mongo data base
 mongoose.connect(process.env.MONGO, { useNewUrlParser: true, useUnifiedTopology: true }); 
 
@@ -146,4 +147,6 @@ async function updateAppsHandler(req,res){
 // renad.save()
 
 // majed.save()
+
+server.listen(PORT||3001,()=>{})
 server.get('/', (req, res) => { res.send(`Home route`) })
