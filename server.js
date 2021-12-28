@@ -147,6 +147,4 @@ async function updateAppsHandler(req,res){
 // renad.save()
 
 // majed.save()
-
-server.listen(PORT,()=>{})
-server.get('/', (req, res) => { res.send(`Listining to ${PORT}`) })
+server.get('/', (req, res) => { res.send(`Home route`) })
